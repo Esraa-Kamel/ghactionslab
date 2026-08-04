@@ -9,9 +9,9 @@ jobs:
   example-job: #job name
     runs-on: ubuntu-latest #runner
     
-  steps:
-    - name: print a welcome message
-    run: echo"Welcome to our Github Actions WF"
+    steps:
+      - name: print a welcome message
+        run: echo"Welcome to our Github Actions WF"
     
     
   
