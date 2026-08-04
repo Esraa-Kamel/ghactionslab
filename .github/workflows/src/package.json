@@ -1,7 +1,7 @@
 {
     "name": "simple-node-app",
-    "version": "24.15.0",
-    "description": "simple app",
+    "version": "1.0.0",
+    "description": "Simple Node.js app",
     "main": "src/app.js",
     "scripts": {
         "test": "bash src/test.sh"
