@@ -11,7 +11,7 @@ jobs:
     
     steps:
       - name: print a welcome message
-      run: echo"Welcome to our Github Actions WF"
+        run: echo"Welcome to our Github Actions WF"
     
     
   
