@@ -6,8 +6,8 @@ on:
       - main
 
 jobs:
-  example-job: #job name
-    runs-on: ubuntu-latest #runner
+  example-job:
+    runs-on: ubuntu-latest
     
     steps:
       - name: print a welcome message
