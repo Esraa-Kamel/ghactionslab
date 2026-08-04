@@ -14,6 +14,8 @@ jobs:
         run: echo "Welcome to our Github Actions WF"
       - name: Step 2 Checkout Repo
         uses: actions/checkout@v6.1.0
+      - name: Step 3 List Repo
+        run: ls -la
     
     
   
