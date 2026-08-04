@@ -1,4 +1,4 @@
-name: first WF
+name: First WF
 
 on:
   push:
@@ -10,8 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: print a welcome message
+      - name: Print a welcome message
         run: echo "Welcome to our Github Actions WF"
+      - name: Checkout Repo
+        uses: actions/checkout@v3
     
     
   
