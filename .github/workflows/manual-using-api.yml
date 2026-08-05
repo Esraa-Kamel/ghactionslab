@@ -2,7 +2,7 @@ name: Manual trigger WF for repo using Ext. API
 
 on:
   repository_dispatch:
-    types: [incedent_report]
+    types: [incident_report]
 
 jobs:
   handel-incident:
