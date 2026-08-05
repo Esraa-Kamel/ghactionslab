@@ -3,7 +3,14 @@ on:
   schedule:
     - cron: "0 0 * * *"
     - cron: "0 2 * * *"
+    - cron: "0 8 * * 1"
+    - cron: "0 * * * *"
+    - cron: "0 9 1 * *"
+    
 jobs:
   daily task:
-    runs-on: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: print message
+        run: echo "Running the schedule task"
   
