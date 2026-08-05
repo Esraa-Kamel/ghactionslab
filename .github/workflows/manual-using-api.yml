@@ -1,0 +1,12 @@
+name: Manual trigger WF for repo using Ext. API
+
+on:
+  repository_dispatch:
+    types: [incedent_report]
+
+jobs:
+  handel-incident:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print incident details
+        run: echo "Incident Reported"
