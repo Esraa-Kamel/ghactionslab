@@ -5,7 +5,7 @@ on:
     types: [incident_report]
 
 jobs:
-  handel-incident:
+  handle-incident:
     runs-on: ubuntu-latest
     steps:
       - name: print incident details
