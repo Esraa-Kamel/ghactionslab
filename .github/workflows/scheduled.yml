@@ -1,0 +1,9 @@
+name: Scheduled Run
+on:
+  schedule:
+    - cron: "0 0 * * *"
+    - cron: "0 2 * * *"
+jobs:
+  daily task:
+    runs-on: 
+  
