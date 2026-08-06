@@ -1,0 +1,20 @@
+name: matrix strategy to run app in different OS
+
+on:
+  workflow_dispatch:
+
+jobs:
+  Matrix-strategy-job:
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node_version: [14.x, 15.x, 16.x]
+    runs-on: ${{matrix.os}}
+    steps:
+      - uses: actions/setup-node@v7.0.0
+        with:
+          node_version:${{matrix.node_version}}
+  
+  

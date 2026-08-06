@@ -1,0 +1,53 @@
+name: actions
+
+on:
+  workflow_dispatch:
+
+jobs:
+  actions-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6.1.0 # uses to use actions or docker container but should be public access without credentials
+        #with: # Pass parameters in map DT to the action as it is a function
+        #  name: Ahmed
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+  hybrid-jobs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run through ubuntu vm
+        run: echo "this run through ubuntu vm"
+
+      - name: run through an alpine container
+        uses: docker://alpine:3.14
+        with:
+          entrypoint: /bin/sh
+          args: |
+            -c 'echo "this run through ubuntu vm"'
+      
+      - name: Run another step through ubuntu vm
+        run: echo "this run another step through ubuntu vm"
+  dockeried-job-Public-image:
+    runs-on: ubuntu-latest
+    container: node:20
+    steps:
+      - name: test a dockeried-job runs on Node.js container
+        run: |
+            node -v
+            echo "this whole job runs on Node.js container"
+  
+  dockeried-job-Private-image:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/my-org/my-private-image:latest
+      credentials:
+        username: ${{secrets.DOCKER_USERNAME}}
+        password: ${{secrets.DOCKER_PASSWORD}}
+    
+    steps:
+      - name: test a dockeried-job runs on Node.js container
+        run: |
+            node -v
+            echo "this whole job runs on PRIVATE container"
